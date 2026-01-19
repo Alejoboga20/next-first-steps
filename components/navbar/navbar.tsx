@@ -1,6 +1,8 @@
 import Link from 'next/link';
-import { routes } from '@/lib/routes';
 import { HomeIcon } from '@primer/octicons-react';
+
+import { routes } from '@/lib/routes';
+import { ActiveLink } from './active-link';
 
 export const Navbar = () => {
 	return (
@@ -17,13 +19,7 @@ export const Navbar = () => {
 
 			<div className='flex flex-1 w-full justify-end'>
 				{routes.map((route) => (
-					<Link
-						className='mr-2 text-white cursor-pointer'
-						key={route.path}
-						href={route.path}
-					>
-						{route.name}
-					</Link>
+					<ActiveLink key={route.path} path={route.path} text={route.name} />
 				))}
 			</div>
 		</nav>
