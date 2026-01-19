@@ -1,42 +1,37 @@
 export interface Route {
-  path: string;
-  name: string;
-  description?: string;
+	path: string;
+	name: string;
+	description?: string;
 }
 
 export const routes: Route[] = [
-  {
-    path: '/',
-    name: 'Home',
-    description: 'Main landing page'
-  },
-  {
-    path: '/about',
-    name: 'About',
-    description: 'About us page'
-  },
-  {
-    path: '/contact',
-    name: 'Contact',
-    description: 'Contact information'
-  },
-  {
-    path: '/pricing',
-    name: 'Pricing',
-    description: 'Pricing plans'
-  }
+	{
+		path: '/about',
+		name: 'About',
+		description: 'About us page',
+	},
+	{
+		path: '/contact',
+		name: 'Contact',
+		description: 'Contact information',
+	},
+	{
+		path: '/pricing',
+		name: 'Pricing',
+		description: 'Pricing plans',
+	},
 ];
 
 // Hook to get all routes
 export function useRoutes() {
-  return routes;
+	return routes;
 }
 
 // Utility functions
 export function getPublicRoutes() {
-  return routes;
+	return routes;
 }
 
 export function getRouteByPath(path: string) {
-  return routes.find(route => route.path === path);
+	return routes.find((route) => route.path === path);
 }
